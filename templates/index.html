@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f6f8;
+        color: #333;
+    }
+
+    .dashboard {
+        max-width: 1500px;
+        margin: 40px auto;
+        padding: 40px 60px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    .chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    .chart-box {
+        flex: 1 1 48%;
+        min-width: 500px;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+</style>
+
+<body>
+    <div class="dashboard">
+        <h1>Employee Engagement Metrics</h1>
+
+        <div class="chart-container">
+            <div class="chart-box">
+                <h2>Total Minutes per User</h2>
+                <canvas id="userChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h2>Activity Breakdown by Type</h2>
+                <canvas id="typeChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script id="data-json" type="application/json">
+        {
+          "userLabels": {{ user_data | map(attribute=0) | list | tojson }},
+          "userDurations": {{ user_data | map(attribute=1) | list | tojson }},
+          "typeLabels": {{ type_data | map(attribute=0) | list | tojson }},
+          "typeDurations": {{ type_data | map(attribute=1) | list | tojson }}
+        }
+      </script>
+
+
+    <script>
+
+    const jsonData = JSON.parse(document.getElementById("data-json").textContent);
+    const userLabels = jsonData.userLabels;
+    const userDurations = jsonData.userDurations;
+    const typeLabels = jsonData.typeLabels;
+    const typeDurations = jsonData.typeDurations;
+
+        // Bar Chart
+        new Chart(document.getElementById("userChart"), {
+            type: 'bar',
+            data: {
+                labels: userLabels,
+                datasets: [{
+                    label: "Total Minutes",
+                    data: userDurations,
+                    backgroundColor: "#4CAF50"
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        new Chart(document.getElementById("typeChart"), {
+            type: 'pie',
+            data: {
+                labels: typeLabels,
+                datasets: [{
+                    data: typeDurations,
+                    backgroundColor: ["#2196F3", "#FFC107", "#FF5722"]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                return `${label}: ${value} mins`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

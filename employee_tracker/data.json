@@ -1,0 +1,74 @@
+[
+    {
+      "name": "Fawaz",
+      "activities": [
+        { "activity": "Team meeting", "type": "collaboration", "duration": 30, "timestamp": "2025-05-12 10:00:00" },
+        { "activity": "Completed Python module", "type": "learning", "duration": 45, "timestamp": "2025-05-12 11:00:00" }
+      ]
+    },
+    {
+      "name": "Anjali",
+      "activities": [
+        { "activity": "Code review session", "type": "collaboration", "duration": 60, "timestamp": "2025-05-12 09:30:00" },
+        { "activity": "Watched SQL tutorial", "type": "learning", "duration": 40, "timestamp": "2025-05-12 13:00:00" },
+        { "activity": "Designed UI", "type": "creative", "duration": 50, "timestamp": "2025-05-12 14:00:00" }
+      ]
+    },
+    {
+      "name": "Ravi",
+      "activities": [
+        { "activity": "Sprint planning", "type": "collaboration", "duration": 25, "timestamp": "2025-05-12 10:15:00" },
+        { "activity": "Learned Flask", "type": "learning", "duration": 70, "timestamp": "2025-05-12 11:30:00" }
+      ]
+    },
+    {
+      "name": "Ayesha",
+      "activities": [
+        { "activity": "One-on-one call", "type": "collaboration", "duration": 20, "timestamp": "2025-05-12 10:45:00" },
+        { "activity": "Frontend training", "type": "learning", "duration": 50, "timestamp": "2025-05-12 12:00:00" }
+      ]
+    },
+    {
+      "name": "Karan",
+      "activities": [
+        { "activity": "Code merge discussion", "type": "collaboration", "duration": 30, "timestamp": "2025-05-12 11:00:00" },
+        { "activity": "Practiced backend API", "type": "learning", "duration": 60, "timestamp": "2025-05-12 13:30:00" }
+      ]
+    },
+    {
+      "name": "Nisha",
+      "activities": [
+        { "activity": "UX feedback session", "type": "collaboration", "duration": 40, "timestamp": "2025-05-12 09:00:00" },
+        { "activity": "Learned Git basics", "type": "learning", "duration": 45, "timestamp": "2025-05-12 10:30:00" }
+      ]
+    },
+    {
+      "name": "Deepak",
+      "activities": [
+        { "activity": "Standup meeting", "type": "collaboration", "duration": 15, "timestamp": "2025-05-12 09:15:00" },
+        { "activity": "Learned JavaScript", "type": "learning", "duration": 55, "timestamp": "2025-05-12 11:45:00" }
+      ]
+    },
+    {
+      "name": "Sara",
+      "activities": [
+        { "activity": "Brainstorming session", "type": "collaboration", "duration": 35, "timestamp": "2025-05-12 10:20:00" },
+        { "activity": "Watched React video", "type": "learning", "duration": 65, "timestamp": "2025-05-12 14:00:00" }
+      ]
+    },
+    {
+      "name": "Vikram",
+      "activities": [
+        { "activity": "Debugging pair session", "type": "collaboration", "duration": 50, "timestamp": "2025-05-12 12:15:00" },
+        { "activity": "Learned SQL joins", "type": "learning", "duration": 40, "timestamp": "2025-05-12 13:15:00" }
+      ]
+    },
+    {
+      "name": "Meera",
+      "activities": [
+        { "activity": "Cross-team meeting", "type": "collaboration", "duration": 45, "timestamp": "2025-05-12 15:00:00" },
+        { "activity": "Explored UI frameworks", "type": "learning", "duration": 60, "timestamp": "2025-05-12 16:30:00" }
+      ]
+    }
+  ]
+  
